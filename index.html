@@ -802,7 +802,7 @@
       overflow: hidden; border-radius: 1.5rem; border: 1px solid oklch(1 0 0 / 0.12);
       padding: 1rem; background: oklch(0.07 0.01 265 / 0.85);
     }
-    .calendly-wrap iframe { width: 100%; height: 680px; border: none; border-radius: 1.5rem; }
+    .calendly-wrap iframe { width: 100%; height: 740px; border: none; border-radius: 1.5rem; overflow: auto; }
     .contact-form-card {
       border-radius: 1.5rem; padding: 1.5rem;
       background: oklch(0.05 0.01 265 / 0.92); border: 1px solid oklch(1 0 0 / 0.10);
@@ -853,10 +853,14 @@
     .footer-nav a:hover { color: var(--foreground); }
     .footer-socials { display: flex; align-items: center; gap: 1rem; }
     .footer-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       border-radius: 9999px; padding: 0.375rem 0.75rem; font-size: 0.75rem; font-weight: 600;
       background: oklch(0.78 0.16 80 / 0.08); border: 1px solid oklch(0.78 0.16 80 / 0.18);
       color: var(--gold); transition: transform 0.2s;
     }
+    .footer-social svg { width: 1rem; height: 1rem; }
     .footer-social:hover { transform: scale(1.05); }
     .footer-bottom {
       margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
@@ -1145,7 +1149,6 @@
         </div>
         <div class="service-tier">Starter</div>
         <h3 class="service-title">Zapier Automation</h3>
-        <div class="service-price"><span class="amount">$250</span><span class="unit">per project</span></div>
         <p class="service-desc">Multi-step Zapier workflows that connect your apps, eliminate manual work, and run 24/7 without you.</p>
         <ul class="service-features">
           <li class="service-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-step Zap design & build</span></li>
@@ -1163,7 +1166,6 @@
         </div>
         <div class="service-tier">Professional</div>
         <h3 class="service-title">AI-Powered Workflows</h3>
-        <div class="service-price"><span class="amount">$800</span><span class="unit">per project</span></div>
         <p class="service-desc">OpenAI-integrated pipelines that generate personalized emails, score leads, and make intelligent decisions automatically.</p>
         <ul class="service-features">
           <li class="service-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>OpenAI GPT integration via Zapier</span></li>
@@ -1181,7 +1183,6 @@
         </div>
         <div class="service-tier">Ongoing</div>
         <h3 class="service-title">Virtual Assistant</h3>
-        <div class="service-price"><span class="amount">$10</span><span class="unit">per hour</span></div>
         <p class="service-desc">Reliable remote support for data management, research, coordination, and day-to-day admin tasks.</p>
         <ul class="service-features">
           <li class="service-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Data entry & database management</span></li>
@@ -1200,7 +1201,6 @@
       </div>
       <div class="service-tier">Web Development</div>
       <h3 class="service-title">Web App & SaaS Projects</h3>
-      <div class="service-price"><span class="amount">$1,500</span><span class="unit">per project</span></div>
       <p class="service-desc">Full-stack web development for marketing sites, dashboards, marketplaces, and custom applications using Laravel, Vue, and Tailwind.</p>
       <ul class="service-features">
         <li class="service-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Laravel/Vue SaaS and marketplace build</span></li>
@@ -1416,7 +1416,7 @@
             <iframe
               title="Calendly booking"
               src="https://calendly.com/ajjosol18/discovery-call?embed_domain=localhost&embed_type=Inline"
-              frameborder="0" scrolling="no">
+              frameborder="0" scrolling="yes">
             </iframe>
           </div>
             
@@ -1437,6 +1437,10 @@
                 <label>Email</label>
                 <input type="email" name="email" placeholder="you@email.com" class="pf-input" required />
               </div>
+            </div>
+            <div class="form-field" style="margin-bottom:1.25rem;">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="09XXXXXXXXX" class="pf-input" />
             </div>
             <div class="form-field" style="margin-bottom:1.25rem;">
               <label>Project type</label>
@@ -1491,6 +1495,10 @@
         <a href="https://github.com/whoiszen" target="_blank" rel="noreferrer" class="footer-social">GitHub</a>
         <a href="https://www.linkedin.com/in/aj-josol-93836a36a/" target="_blank" rel="noreferrer" class="footer-social">LinkedIn</a>
         <a href="https://v2.onlinejobs.ph/jobseekers/info/4245030" target="_blank" rel="noreferrer" class="footer-social">OnlineJobs</a>
+        <a href="https://api.whatsapp.com/send?phone=639938789620" target="_blank" rel="noopener noreferrer" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.148-.669.15-.198.297-.767.966-.941 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.173.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347z"/><path d="M12 2.04C6.486 2.04 2.04 6.486 2.04 12S6.486 21.96 12 21.96 21.96 17.514 21.96 12 17.514 2.04 12 2.04Zm0 17.42c-4.081 0-7.4-3.319-7.4-7.4s3.319-7.4 7.4-7.4 7.4 3.319 7.4 7.4-3.319 7.4-7.4 7.4Z"/></svg>
+          WhatsApp
+        </a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1742,10 +1750,6 @@ function buildModalContent(p){
     <div class="timeline-steps" style="grid-template-columns:repeat(${p.timeline.length},minmax(0,1fr))">
       ${p.timeline.map((s,i)=>`<div class="timeline-step"><div class="tl-dot">${i+1}</div><div class="tl-label">${s}</div></div>`).join('')}
     </div>
-  </div>
-  <div class="value-box">
-    <div class="value-label">Estimated Client Value</div>
-    <div class="value-amount">${p.value}</div>
   </div>`;
 }
 
